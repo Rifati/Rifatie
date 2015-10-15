@@ -9,17 +9,17 @@ import java.awt.event.ActionListener;
 
 
 
-public class PraktijkOpdracht extends Applet
+public class PraktijkOpdracht2 extends Applet
 {
 	int tafelinput;
 	int i, x, y;
-	TextField vak1;
+	Button vak1;
 	
 	public void init()
 	{
 		setSize(300,300);
 		tafelinput = 0;
-		vak1 = new TextField();
+		vak1 = new Button("next");
 		vak1.setSize(300, 500);
 		Listen1 l1 = new Listen1();
 		vak1.addActionListener(l1);
@@ -45,8 +45,7 @@ public class PraktijkOpdracht extends Applet
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			tafelinput=(Integer.parseInt(vak1.getText()));
-			vak1.setText("");
+			tafelinput++;
 			repaint();
 		}
 	}

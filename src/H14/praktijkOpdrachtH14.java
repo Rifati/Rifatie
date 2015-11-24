@@ -15,7 +15,7 @@ public class praktijkOpdrachtH14 extends Applet{
 	Button ok = new Button("OK");
 	Button reset = new Button("Reset");
 	TextField input = new TextField("", 15);
-	Label label = new Label("hoi");
+	Label label = new Label("Hoeveel smileys neem je?");
 	String displayText= "";
 	int linkCount = 23;
 	boolean won = false;
@@ -42,7 +42,7 @@ public class praktijkOpdrachtH14 extends Applet{
 		int count = 0;
 		for (int i = 0; i < 5; i++){
 			for (int f = 0; f < 5; f++){
-				if (count < linkCount ) {g.drawImage(img, 20+(50*f), 20+50*i, this);}
+				if (count < linkCount ) {g.drawImage(img, 30+(50*f), 30+50*i, this);}
 				count++;
 				
 			}
@@ -57,16 +57,16 @@ public class praktijkOpdrachtH14 extends Applet{
 				int inputInt = Integer.parseInt(input.getText());
 				if (inputInt >= 1 && inputInt <= 3) { 
 					linkCount -= inputInt;
-					if (linkCount < 1) {lost = true;} //if you ended the game, you lost
+					if (linkCount < 1) {lost = true;} 
 					if ((linkCount-1)%4 != 0) {
 						cpulink = 1+((linkCount-1)%4-1);
-						linkCount -= cpulink; //CPU is winning
+						linkCount -= cpulink; 
 					}
 					else {
 						cpulink = (int)(Math.random()*3+1);
-						linkCount -= cpulink; //CPU is losing
+						linkCount -= cpulink;
 					}
-					if (linkCount < 1 && lost == false) {won = true;} //if CPU ended the game, you won
+					if (linkCount < 1 && lost == false) {won = true;} 
 					if (cpulink == 1) {displayText = "CPU took "+ cpulink +" gem.";}
 					else {displayText = "CPU took "+ cpulink +" gems.";}
 				}

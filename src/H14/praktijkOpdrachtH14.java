@@ -2,6 +2,7 @@ package H14;
 
 import java.applet.Applet;
 import java.awt.Button;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Label;
@@ -38,6 +39,15 @@ public class praktijkOpdrachtH14 extends Applet{
 	
 	
 	public void paint(Graphics g) {
+		g.setFont(new Font("Arial", Font.PLAIN, 20));
+		if (won == true) {
+			displayText = "You won (;";
+		}
+		if (lost == true) {
+			displayText = "You lost (;";
+			linkCount = 0;
+			g.drawString(""+ displayText, getWidth()/2-75, 75);
+		}
 		Image img = getImage(getCodeBase(), "H14/8bitlink.png");
 		int count = 0;
 		for (int i = 0; i < 5; i++){

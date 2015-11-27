@@ -16,12 +16,13 @@ public class praktijkOpdrachtH14 extends Applet{
 	Button ok = new Button("OK");
 	Button reset = new Button("Reset");
 	TextField input = new TextField("", 15);
-	Label label = new Label("Hoeveel Links neem je?");
+	Label label = new Label("how many links will you kill?");
 	String displayText= "";
 	int linkCount = 23;
 	boolean won = false;
 	boolean lost = false;
-	
+	int cpulink = 0;
+	String cpuLinkText = "";
 	
 	
 	public void init()	{
@@ -57,14 +58,14 @@ public class praktijkOpdrachtH14 extends Applet{
 				
 			}
 		}
-		g.drawString(""+ linkCount, 300, 50);
+		g.drawString("Links Still alive "+ linkCount, 300, 50);
+		g.drawString(cpuLinkText, 300,70);
 		
 		
 	}
 	class OKListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (won == false && lost == false) {
-				int cpulink = 0;
 				int inputInt = Integer.parseInt(input.getText());
 				if (inputInt >= 1 && inputInt <= 3) { 
 					linkCount -= inputInt;
@@ -77,12 +78,14 @@ public class praktijkOpdrachtH14 extends Applet{
 						cpulink = (int)(Math.random()*3+1);
 						linkCount -= cpulink;
 					}
-					if (linkCount < 1 && lost == false) {won = true;} 
+					if (cpulink < 1 && lost == false) {won = true;} 
 					if (cpulink == 1) {displayText = "CPU took "+ cpulink +" links.";}
 					else {displayText = "CPU took "+ cpulink +" links.";}
 				}
 				else {displayText = "Invalid input";}
 			}
+			cpuLinkText = "CPU killed "+ cpulink +" Links";
+			if (cpulink < 0) {cpuLinkText = "game over";}
 			input.setText(" ");
 			input.setText("");
 			input.requestFocus();

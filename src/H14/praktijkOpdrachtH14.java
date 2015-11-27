@@ -16,7 +16,7 @@ public class praktijkOpdrachtH14 extends Applet{
 	Button ok = new Button("OK");
 	Button reset = new Button("Reset");
 	TextField input = new TextField("", 15);
-	Label label = new Label("Hoeveel smileys neem je?");
+	Label label = new Label("Hoeveel Links neem je?");
 	String displayText= "";
 	int linkCount = 23;
 	boolean won = false;
@@ -77,8 +77,8 @@ public class praktijkOpdrachtH14 extends Applet{
 						linkCount -= cpulink;
 					}
 					if (linkCount < 1 && lost == false) {won = true;} 
-					if (cpulink == 1) {displayText = "CPU took "+ cpulink +" gem.";}
-					else {displayText = "CPU took "+ cpulink +" gems.";}
+					if (cpulink == 1) {displayText = "CPU took "+ cpulink +" links.";}
+					else {displayText = "CPU took "+ cpulink +" links.";}
 				}
 				else {displayText = "Invalid input";}
 			}

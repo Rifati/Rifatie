@@ -57,6 +57,7 @@ public class praktijkOpdrachtH14 extends Applet{
 				
 			}
 		}
+		g.drawString(""+ linkCount, 300, 50);
 		
 		
 	}
